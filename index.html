@@ -6,74 +6,16 @@
     <title>Landing Page</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Sign up now for a special discount!</h1>
-            <p>Sign up today and get a 50% discount on all products!</p>
-            <a href="#subscribe" class="cta-button">Sign up now</a>
+            <h1>Welcome to Our Site!</h1>
+            <p>Sign up today and get a special discount.</p>
+            <a href="login.html" class="cta-button">Login</a>
+            <a href="signup.html" class="cta-button">Sign Up</a>
         </div>
     </section>
-
-    <!-- Subscribe Form -->
-    <section class="subscribe" id="subscribe">
-        <h2>Subscribe now to get a special discount</h2>
-        <form id="subscribe-form" action="#" method="POST">
-            <input type="text" id="from_name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <textarea id="message" placeholder="Your message" required></textarea>
-            <button type="submit" class="cta-button">Sign up now</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 All rights reserved</p>
-    </footer>
-
-    <!-- JavaScript Section -->
-    <script>
-        // Initialize EmailJS with your User ID
-        (function() {
-            emailjs.init("your_user_id");  // Replace with your EmailJS user ID
-        })();
-
-        // Add event listener to the subscribe form
-        document.getElementById('subscribe-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const fromName = document.getElementById('from_name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Validate email
-            if (email && validateEmail(email)) {
-                // Send the email via EmailJS using your Service ID and Template ID
-                emailjs.send("service_oajsznk", "template_h6o3kaa", {
-                    to_name: email,    // Set email as the recipient
-                    from_name: fromName,
-                    message: message
-                })
-                .then(function(response) {
-                    alert('Thank you for subscribing!');
-                }, function(error) {
-                    alert('Failed to send the email. Please try again.');
-                });
-            } else {
-                alert('Please enter a valid email address.');
-            }
-        });
-
-        // Email validation function
-        function validateEmail(email) {
-            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            return emailPattern.test(email);
-        }
-    </script>
-
 </body>
 </html>
