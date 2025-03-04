@@ -1,0 +1,137 @@
+/* التهيئة الأساسية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* استخدام خط Roboto للنصوص */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* خلفية فاتحة */
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif; /* استخدام خط Poppins للعناوين */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #00aaff, #00ffcc); /* خلفية متدرجة */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #ff6f00; /* برتقالي جذاب */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e65100; /* لون برتقالي أغمق عند التمرير */
+}
+
+/* Value Proposition Section */
+.value-proposition {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.value-proposition h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.value-proposition ul {
+    list-style: none;
+    padding: 0;
+}
+
+.value-proposition li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.testimonials h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    margin: 20px 0;
+    font-style: italic;
+    color: #666;
+}
+
+/* Subscribe Section */
+.subscribe {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.subscribe h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.subscribe form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.subscribe input {
+    padding: 10px;
+    font-size: 1em;
+    width: 70%;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.subscribe button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #00aaff; /* الأزرق الفاتح */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscribe button:hover {
+    background-color: #008c99; /* أزرق غامق عند التمرير */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+}
