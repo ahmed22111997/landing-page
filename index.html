@@ -6,64 +6,63 @@
     <title>Landing Page</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Subscribe Now for a Special Discount!</h1>
+            <h1>Sign up now for a special discount!</h1>
             <p>Sign up today and get a 50% discount on all products!</p>
-            <a href="#subscribe" class="cta-button">Subscribe Now</a>
-        </div>
-    </section>
-
-    <!-- Value Proposition -->
-    <section class="value-proposition">
-        <h2>Why Choose Us?</h2>
-        <ul>
-            <li>High-quality products</li>
-            <li>Fast and secure shipping</li>
-            <li>24/7 customer support</li>
-        </ul>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <h2>Customer Testimonials</h2>
-        <div class="testimonial">
-            <p>"Great products! Highly recommended." - Ahmed</p>
-        </div>
-        <div class="testimonial">
-            <p>"I got a huge discount. Excellent customer service!" - Sarah</p>
+            <a href="#subscribe" class="cta-button">Sign up now</a>
         </div>
     </section>
 
     <!-- Subscribe Form -->
     <section class="subscribe" id="subscribe">
-        <h2>Subscribe Now for a Special Discount</h2>
+        <h2>Subscribe now to get a special discount</h2>
         <form id="subscribe-form" action="#" method="POST">
+            <input type="text" id="from_name" placeholder="Your Name" required>
             <input type="email" id="email" placeholder="Enter your email" required>
-            <button type="submit" class="cta-button">Subscribe Now</button>
+            <textarea id="message" placeholder="Your message" required></textarea>
+            <button type="submit" class="cta-button">Sign up now</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Ahmed</p>
+        <p>&copy; 2025 All rights reserved</p>
     </footer>
 
     <!-- JavaScript Section -->
     <script>
-        document.querySelector('.cta-button').addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent form submission
-            const emailInput = document.querySelector('#email');
-            const email = emailInput.value;
+        // Initialize EmailJS with your User ID
+        (function() {
+            emailjs.init("your_user_id");  // Replace with your EmailJS user ID
+        })();
 
+        // Add event listener to the subscribe form
+        document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fromName = document.getElementById('from_name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Validate email
             if (email && validateEmail(email)) {
-                alert('Thank you for subscribing! You will receive notifications soon.');
-                // Here you would send the email to your server to store it or send an email.
-                emailInput.value = ''; // Clear input field after submission
+                // Send the email via EmailJS using your Service ID and Template ID
+                emailjs.send("service_oajsznk", "template_h6o3kaa", {
+                    to_name: email,    // Set email as the recipient
+                    from_name: fromName,
+                    message: message
+                })
+                .then(function(response) {
+                    alert('Thank you for subscribing!');
+                }, function(error) {
+                    alert('Failed to send the email. Please try again.');
+                });
             } else {
                 alert('Please enter a valid email address.');
             }
