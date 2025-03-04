@@ -8,7 +8,7 @@ document.getElementById('subscribe-form').addEventListener('submit', function(ev
     // Validate email
     if (email && validateEmail(email)) {
         // Send the email via EmailJS using your Service ID and Template ID
-        emailjs.send("service_oajsznk", "your_template_id", {
+        emailjs.send("service_oajsznk", "template_h6o3kaa", {
             to_name: email,    // Set email as the recipient
             from_name: fromName,
             message: message
@@ -24,3 +24,8 @@ document.getElementById('subscribe-form').addEventListener('submit', function(ev
         alert('Please enter a valid email address.');
     }
 });
+
+function validateEmail(email) {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return emailPattern.test(email);
+}
