@@ -8,7 +8,7 @@ document.getElementById('subscribe-form').addEventListener('submit', function(ev
     // Validate email
     if (email && validateEmail(email)) {
         // Send the email via EmailJS using your Service ID and Template ID
-        emailjs.send("service_oajsznk", "template_h6o3kaa", {
+        emailjs.send("service_oajsznk", "template_03ifhhn", {
             to_name: email,    // Set email as the recipient
             from_name: fromName,
             message: message
